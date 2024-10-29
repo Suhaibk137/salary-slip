@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payslip Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="payslip-container" id="payslip-container">
+        <form id="payslip-form">
+            <div class="header">
+                <div class="logo">
+                    <img src="Untitled.png" alt="Company Logo">
+                </div>
+                <div class="company-details">
+                    <h2>Elite Professional Solutions PVT LTD</h2>
+                    <p>Door No.4/461, 2nd Floor, Valamkottil Towers, Judgemuk, Thrikkakara, Kakkanad, Ernakulam, PIN:  682021<br>
+                    Kerala, India, support@eliteresumes.in, +91 7902468500</p>
+                </div>
+                <div class="pay-period">
+                    <label for="pay-period">Payslip For the Month</label>
+                    <input type="month" id="pay-period" name="pay_period" required>
+                </div>
+            </div>
+            
+            <div class="employee-summary">
+                <div class="employee-info">
+                    <label for="employee-name">Employee Name:</label>
+                    <input type="text" id="employee-name" name="employee_name" required>
+
+                    <label for="employee-id">Employee ID:</label>
+                    <input type="text" id="employee-id" name="employee_id" required>
+
+                    <label for="pay-date">Pay Date:</label>
+                    <input type="date" id="pay-date" name="pay_date" required>
+                </div>
+                <div class="net-pay">
+                    <h1 id="employee-net-pay">₹0.00</h1>
+                    <p>Employee Net Pay</p>
+                    <div class="days-info">
+                        <label for="paid-days">Paid Days:</label>
+                        <input type="number" id="paid-days" name="paid_days" value="25" required>
+
+                        <label for="lop-days">LOP Days:</label>
+                        <input type="number" id="lop-days" name="lop_days" value="5" required>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="earnings-deductions">
+                <div class="earnings">
+                    <h4>EARNINGS</h4>
+                    <table>
+                        <tr>
+                            <td>Basic</td>
+                            <td><input type="number" id="basic" name="basic" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr>
+                            <td>House Rent Allowance</td>
+                            <td><input type="number" id="hra" name="hra" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr>
+                            <td>Incentives</td>
+                            <td><input type="number" id="incentives" name="incentives" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Gross Earnings</strong></td>
+                            <td><strong id="gross-earnings">₹0.00</strong></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="deductions">
+                    <h4>DEDUCTIONS</h4>
+                    <table>
+                        <tr>
+                            <td>Income Tax</td>
+                            <td><input type="number" id="income-tax" name="income_tax" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr>
+                            <td>Provident Fund</td>
+                            <td><input type="number" id="provident-fund" name="provident_fund" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr>
+                            <td>LOP</td>
+                            <td><input type="number" id="lop" name="lop" value="0" oninput="calculatePayslip()" required></td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>Total Deductions</strong></td>
+                            <td><strong id="total-deductions">₹0.00</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="net-payable">
+                <p><strong>Total Net Payable</strong></p>
+                <p>Gross Earnings - Total Deductions</p>
+                <h2 id="total-net-payable">₹0.00</h2>
+            </div>
+            
+            <div class="amount-in-words">
+                <p id="amount-in-words">Amount In Words: -</p>
+            </div>
+            <button type="button" onclick="finalizePayslip()">Generate PDF</button>
+            <button type="button" onclick="makeEditable()">Update Payslip</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

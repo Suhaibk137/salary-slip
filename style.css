@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.payslip-container {
+    background-color: #fff;
+    padding: 20px;
+    width: 600px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+.company-details h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.company-details p {
+    font-size: 12px;
+    color: #666;
+}
+
+.pay-period {
+    text-align: right;
+}
+
+.pay-period label {
+    font-size: 12px;
+    color: #666;
+    display: block;
+}
+
+.pay-period input {
+    font-size: 12px;
+    padding: 5px;
+    width: 100%;
+}
+
+.employee-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.employee-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    row-gap: 8px;
+}
+
+.employee-info label, .employee-info input {
+    font-size: 14px;
+    color: #333;
+}
+
+.employee-info input {
+    border: none;
+    background-color: transparent;
+    width: 100px;
+    font-size: 14px;
+    outline: none;
+    padding: 0;
+}
+
+.net-pay h1 {
+    font-size: 28px;
+    color: #2ecc71;
+}
+
+.days-info label {
+    font-size: 12px;
+    color: #666;
+}
+
+.days-info input {
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    font-size: 12px;
+    outline: none;
+    padding: 0;
+}
+
+.earnings-deductions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.earnings, .deductions {
+    width: 48%;
+}
+
+.earnings h4, .deductions h4 {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    font-size: 14px;
+    color: #333;
+    padding: 5px 0;
+}
+
+.total-row td {
+    font-weight: bold;
+}
+
+.net-payable {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.net-payable h2 {
+    font-size: 24px;
+    color: #2ecc71;
+}
+
+.amount-in-words {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
